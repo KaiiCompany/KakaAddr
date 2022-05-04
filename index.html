@@ -52,7 +52,8 @@
                 console.log(data)
                 if (isMobile.Android()) {
                     console.log("Web Android")
-                    window.Dentii.setAddress(data);
+                    var result = JSON.stringify(obj)
+                    window.Dentii.setAddress(result);
                 } else if (isMobile.iOS()) {
                     console.log("Web IOS")
                     webkit.messageHandlers.Dentii.postMessage(data);
