@@ -2,7 +2,7 @@
   <head></head>
   <body> <?php header("Content-Type: text/html; charset=UTF-8"); ?> <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
-            var isMobile = {
+        var isMobile = {
         Android: function() {
           return navigator.userAgent.match(/Android/i) == null ? false : true;
         },
@@ -17,13 +17,13 @@
       
       new daum.Postcode({
         oncomplete: function(data) {
-          
+             console.log(data)
             if (isMobile.Android()) {
                console.log("Web Android")
               window.Dentii.setAddress(data.zonecode, data.roadAddress, data.buildingName);
             } else if (isMobile.iOS()) {
               console.log("Web IOS")
-              webkit.messageHandlers.Dentii.postMessage(data.zonecode, data.roadAddress, data.buildingName);
+              webkit.messageHandlers.Dentii.postMessage(data);
             }
         }
       }).embed();
