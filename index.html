@@ -8,7 +8,7 @@
             if (isMobile.Android()) {
               window.Dentii.setAddress(data.zonecode, data.roadAddress, data.buildingName);
             } else if (isMobile.iOS()) {
-              webkit.messageHandlers.Dentii.postMessage(data.zonecode, data.roadAddress, data.buildingName);
+              webkit.messageHandlers.Dentii.postMessage(data);
             }
           }
         }
