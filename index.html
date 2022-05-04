@@ -4,6 +4,9 @@
     <script>
       new daum.Postcode({
         oncomplete: function(data) {
+          var osType = isMobile.any();
+          console.log(osType);
+          
           if (isMobile.any()) {
             if (isMobile.Android()) {
               window.Dentii.setAddress(data.zonecode, data.roadAddress, data.buildingName);
