@@ -23,7 +23,7 @@
               window.Dentii.setAddress(data.zonecode, data.roadAddress, data.buildingName);
             } else if (isMobile.iOS()) {
               console.log("Web IOS")
-              webkit.messageHandlers.Dentii.postMessage(data);
+              webkit.messageHandlers.Dentii.postMessage(data.zonecode, data.roadAddress, data.buildingName);
             }
         }
       }).embed();
